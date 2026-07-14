@@ -25,7 +25,7 @@ for dt in data:
 
     # ***********
 
-    # Afficher le nombre de ligne, colonne et doublon (Vérification)
+    # Afficher le nombre de ligne, colonne et doublon
     print(f"Nombre de ligne : {df.shape[0]} lignes")
     print(f"Nombre de colonne : {df.shape[1]} colonnes")
     print(f"Nombre de doublon : {nombre_doublons} doublon{dbl}")
@@ -47,12 +47,13 @@ for dt in data:
     print(f"Nouveau nombre de colonne : {df.shape[1]} colonnes")
     if (nombre_doublons > 0):
         print(f"Nouveau nombre de doublon : {df.duplicated().sum()} doublon")
-    
-    # Suppression des valeurs null (Variable 'Location Description' et 'District')
-    print(f"\nValeur Null : 'Location Description' = {df['Location Description'].isnull().sum()}  -  'District' = {df['District'].isnull().sum()}")
-    print("Suppression des valeurs null...")
-    df.dropna(subset=['Location Description', 'District'], inplace=True)
-    print(f"Valeur Null après suppression : 'Location Description' = {df['Location Description'].isnull().sum()}  -  'District' = {df['District'].isnull().sum()}")
+        
+    print("\n\tValeurs null.")
+    print(df.isnull().sum())
+    print("\nSupression des Valeurs null...")
+    df.dropna(inplace=True)
+    print("\n\tValeur null supprimer.")
+    print(df.isnull().sum())
 
     # ************
 
