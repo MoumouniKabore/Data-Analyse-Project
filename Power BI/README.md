@@ -1,0 +1,1 @@
+Lien du fichier csv utiliser : https://www.kaggle.com/datasets/prince7489/e-commerce-sales
